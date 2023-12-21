@@ -21,3 +21,16 @@ Trong dự án này, nhóm sẽ thiết kế và xây dựng một hệ thống 
 
 
 ## Project 3: Hiển thị hình ảnh PNG lên màn hình bộ kit STM32
+### Công cụ sử dụng: 
+* TouchGFX Design version 4.23.0, available at: https://www.st.com/en/development-tools/touchgfxdesigner.html.
+* STM32CubeIDE version 1.14.0.
+* Bộ kit STM32F429I-DISC1.
+
+### Cài đặt:
+1. Clone repo này với lệnh: git clone https://github.com/yourusername/IT4210-Project3.git.
+2. Cấu hình
+3. Mở project bằng phần mềm IDE của bạn và cấu hình các driver cần thiết.
+4. Nạp mã nguồn vào bộ kit STM32 của bạn.
+5. Đảm bảo rằng mọi kết nối phần cứng đều chính xác.
+
+### Sử dụng chương trình
