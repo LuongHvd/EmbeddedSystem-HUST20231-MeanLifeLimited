@@ -1,5 +1,8 @@
-# IT4210 Embedded Systems Course Project - Mean Life Group
+# IT4210 Embedded Systems Course Project - Mean Life Limited Company
 Repo này dùng để chứa mã nguồn và tiến trình của ba projects thực hiện, mỗi project giải quyết một vấn đề cụ thể và có ứng dụng trong đời sống hàng ngày. Phần dưới bao gồm tổng quan về mỗi dự án, hướng dẫn thiết lập, hướng dẫn sử dụng và đóng góp của nhóm.
+## Contributors:
+Hồ Viết Đức Lương - 20200376
+Ngô Trần Anh Thư - 20200623
 
 ## Project for Embedded System
 - Project 1: Hệ thống cảm biến khí ga và ngọn lửa báo cháy trong nhà bếp.
