@@ -1,12 +1,16 @@
-int LED_RED_Danger = 5;            /*LED_RED_Danger pin defined*/
-int LED_GREEN_Safe = 19;
+int LED_RED_Danger = 3;            /*LED_RED_Danger pin defined*/
+int LED_GREEN_Safe = 0;
 
-int gas_sensor_input_pin = 4;    /*Digital pin 4 for sensor input*/
-int flame_sensor_input_pin = 21;
+int gas_sensor_input_pin = 1;    /*Digital pin 4 for sensor input*/
+int flame_sensor_input_pin = 2;
+int gasThreshold = 0;
 void setup() {
   Serial.begin(115200);  /*baud rate for serial communication*/
   pinMode(LED_RED_Danger, OUTPUT);  /*LED_RED_Danger set as Output*/
   pinMode(LED_GREEN_Safe, OUTPUT);  /*LED_GREEN_Safe set as Output*/
+  analogRead(gas_sensor_input_pin);
+  delay(1000);
+  gasThreshold = 150 + analogRead(gas_sensor_input_pin);
 }
 void loop() {
   int gas_sensor_Dout = analogRead(gas_sensor_input_pin);  /*Analog value read function*/
@@ -22,7 +26,7 @@ void loop() {
     Serial.print(0);
   Serial.print("\t");
   Serial.print("\t");
-  if (gas_sensor_Dout > 2200 || flame_sensor_Dout == 0) {    /*if condition with threshold 1800*/
+  if (gas_sensor_Dout > gasThreshold || flame_sensor_Dout == 0) {    /*if condition with threshold 1800*/
     Serial.println("Cháy nhà!!!!!");  
     digitalWrite (LED_RED_Danger, HIGH) ; /*LED_RED_Danger set HIGH if Gas detected */
     digitalWrite (LED_GREEN_Safe, LOW) ; /*LED_GREEN_Safe set LOW if Gas detected */
