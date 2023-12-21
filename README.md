@@ -1,4 +1,4 @@
-# IT4210 Embedded Systems Course Project - LuongThu
+# IT4210 Embedded Systems Course Project - Mean Life Group
 Repo này dùng để chứa mã nguồn và tiến trình của ba projects thực hiện, mỗi project giải quyết một vấn đề cụ thể và có ứng dụng trong đời sống hàng ngày. Phần dưới bao gồm tổng quan về mỗi dự án, hướng dẫn thiết lập, hướng dẫn sử dụng và đóng góp của nhóm.
 
 ## Project for Embedded System
