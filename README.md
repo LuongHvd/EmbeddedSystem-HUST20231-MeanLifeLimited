@@ -155,18 +155,37 @@ Chèn ảnh gas
 #### Kit ESP-WROOM 32
 
 #### OLED SSD1306
+Là module màn hình đồ họa với độ phân giải 128x64. Module này rất nhỏ gọn và tiêu thụ năng lượng thấp, nhưng có chất lượng hiển thị rất tốt. Ngoài ra module còn có ưu
+điểm rất lớn là giao tiếp qua bus I2C nên chỉ cần 2 đường tín hiệu SCL và SDA, và có tốc độ truyền nhận rất cao. Trong project, màn hình sẽ là nơi hiển thị ngày giờ và dữ liệu đo được từ các sensor.
 
+#### Module DS1307 + AT24C32 Tiny RTC
+Là module nhỏ gọn tích hợp cả 3 IC gồm DS1307, AT24C32, và DS18B20 trên cùng một mạch. Cho phép thực hiện 3 chức năng cùng lúc: cung cấp thông tin thời gian thực, lưu trữ dữ liệu, và đo nhiệt độ.
 
-
+#### Sensor DHT11
+Là sensor phục vụ đo nhiệt độ và độ ẩm.
 
 ### 1.2. Công cụ phần mềm Phần mềm
-Arduino IDE, với Board DOIT ESP32 DEV KIT
-Thư viện 
+Arduino IDE, với Board DOIT ESP32 DEV KIT.
+
+Thư viện Adafruit SSD1306 chứa code giúp giao tiếp với màn hình OLED SSD1306.
+
+Thư viện Adafruit RTCLib chứa code giúp giao tiếp với RTC.
+
+Thư viện DallasTemperature và OneWire.
+
+Thư viện DHT11.
 
 ### 1.3. Sơ đồ mạch
+Chèn ảnh vào nheeee
+1. GND các module nối với nhau.
+2. VCC của DHT11, SSD1306 và Tiny RTC nối với chân 3V3 của ESP32.
+3. SCL của SSD1306 và Tiny RTC nối với chân D22 của ESP32.
+4. SDA của SSD1306 và Tiny RTC nối với chân D21 của ESP32.
+5. DS của Tiny RTC nối với chân D4 (số = 4) của ESP32.
+6. Data của DHT11 nối với GPIO 16 (RX2) của ESP32.
 
 ### 1.4. Hoạt động của mạch
-
+Chèn ảnh và video minh hoạ
 
 
 ## Project 3: Hiển thị hình ảnh PNG lên màn hình bộ kit STM32
