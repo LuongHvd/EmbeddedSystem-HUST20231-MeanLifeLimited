@@ -1,5 +1,5 @@
 # IT4210 Embedded Systems Course Project - Mean Life Limited Company
-Repo này dùng để chứa mã nguồn và mô tả ba projects của **Mean Life Limited Company** thực hiện, mỗi project giải quyết một vấn đề cụ thể và có ứng dụng trong đời sống hàng ngày. Phần dưới bao gồm tổng quan về mỗi dự án, hướng dẫn thiết lập, hướng dẫn sử dụng và đóng góp của nhóm. 
+Repo này dùng để chứa mã nguồn và mô tả 3 projects của **Mean Life Limited Company** thực hiện, mỗi project giải quyết một vấn đề cụ thể và có ứng dụng trong đời sống hàng ngày. Phần dưới bao gồm tổng quan về mỗi dự án, hướng dẫn thiết lập, hướng dẫn sử dụng và đóng góp của nhóm. 
 Mục tiêu của nhóm không chỉ là hoàn thành các yêu cầu của môn học mà còn là tạo ra những sản phẩm có giá trị thực tiễn, có thể áp dụng trong đời sống và có khả năng mở rộng trong tương lai.
 ## Contributors:
 Hồ Viết Đức Lương - 20200376
