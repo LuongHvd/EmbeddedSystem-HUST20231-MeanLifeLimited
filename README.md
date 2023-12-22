@@ -15,9 +15,10 @@ Ngô Trần Anh Thư - 20200623
 Trong dự án này, nhóm sẽ thiết kế và xây dựng một hệ thống cảm biến thông minh nhằm phát hiện khí ga và ngọn lửa trong nhà bếp. Hệ thống sẽ tích hợp các cảm biến đặc biệt (bao gồm sensor phát hiện khí gas và sensor phát hiện lửa) để nhận biết sớm các nguy cơ cháy nổ, từ đó kích hoạt hệ thống cảnh báo và tiến hành các biện pháp an toàn cần thiết.
 ### 1.1. Công cụ phần cứng:
 #### Kit ESP32-C3_Mini:
-Dòng ESP32-C3 được xem là dòng low cost (giá rẻ) của ESPRESSIF tuy nhiên đây có thể được xem là dòng SoC phổ biến với những ưu điểm sau: Ngoại vi hỗ trợ mạnh: Bộ ADC, UART, I2C, SPI, … linh động, có thể mapping tới bất kì GPIO nào. Đồng thời số chân GPIO cũng nhiều hơn ESP8266 phù hợp với các ứng dụng cần nhiều GPIO.
-Hỗ trợ BLE 5.0 long range: Đây là một trong những điểm cộng, vì nó có thể dùng trong các ứng dụng kết nối BLE cần khoảng cách xa (thu thập dữ liệu sensor) với chi phí thấp.
-Hỗ trợ thuật mã hoá phần cứng (cho TLS/SSL): AES-128/AES-256 (FIPS PUB 197), ECB/CBC/OFB/CFB/CTR (NIST SP 800-38A), SHA1/SHA224/SHA256 (FIPS PUB 180-4), RSA3072, and ECC. Đây là một trong những thuật toán cơ bản cho kết nối MQTTS, HTTPS cũng như giao tiếp peer to peer.Bộ nhớ RAM phù hợp cho các ứng dụng IoT.
+Dòng ESP32-C3 được xem là dòng low cost (giá rẻ) của ESPRESSIF tuy nhiên đây có thể được xem là dòng SoC phổ biến với những ưu điểm sau: 
+- Ngoại vi hỗ trợ mạnh: Bộ ADC, UART, I2C, SPI, … linh động, có thể mapping tới bất kì GPIO nào. Đồng thời số chân GPIO cũng nhiều hơn ESP8266 phù hợp với các ứng dụng cần nhiều GPIO.
+- Hỗ trợ BLE 5.0 long range: Đây là một trong những điểm cộng, vì nó có thể dùng trong các ứng dụng kết nối BLE cần khoảng cách xa (thu thập dữ liệu sensor) với chi phí thấp.
+- Hỗ trợ thuật mã hoá phần cứng (cho TLS/SSL): AES-128/AES-256 (FIPS PUB 197), ECB/CBC/OFB/CFB/CTR (NIST SP 800-38A), SHA1/SHA224/SHA256 (FIPS PUB 180-4), RSA3072, and ECC. Đây là một trong những thuật toán cơ bản cho kết nối MQTTS, HTTPS cũng như giao tiếp peer to peer.Bộ nhớ RAM phù hợp cho các ứng dụng IoT.
 
 Tính Năng:
 Wi­Fi:
@@ -61,9 +62,9 @@ Còi này để phát lên cảnh báo khi có nguy hiểm về lửa hoặc kh�
 Arduino IDE, với Board ESP32-C3 Dev dùng để nạp code.
 
 ### 1.3. Sơ đồ mạch
-Chèn ảnh mạch ko có gì hihi
+![prj1_1](https://github.com/LuongHvd/EmbeddedSystem-HUST20231-LuongThu/assets/104610812/b4a84fb1-01e7-449c-aa67-c540343d4ff1)
 
-Lắp mạch:
+**Lắp mạch:**
 1. Các chân GND của ESP32-C3, còi chip, đèn LED, cảm biến gas MQ2 và cảm biến flame sensor nối chung với nhau.
 2. Chân VCC của 2 sensor và còi chip nối vào nguồn 3.3V của ESP32-C3.
 3. Chân AO (analog-out) của MQ2 nối với GPIO1 của ESP32
@@ -71,10 +72,9 @@ Lắp mạch:
 5. Chân RED của đèn và chân còn lại của còi nối với GPIO3 của ESP32.
 6. Chân GREEN của đèn nối với GPIO0 của ESP32.
 
-Các chân GPIO này có thể tuỳ ý lựa chọn, nhưng cần lưu ý lại để phục vụ lập trình.
+*Các chân GPIO này có thể tuỳ ý lựa chọn, nhưng cần lưu ý lại để phục vụ lập trình.*
 
 ### 1.4. Thuật toán phát hiện nguy hiểm
-
 1. Set up: khởi tạo các chân vào ra của mạch.
 2. Đo ngưỡng ga: đo 10 lần tín hiệu analog từ MQ2 để xác định.
 3. Loop: Nếu nhận được tín hiệu 0 từ DO của flame sensor hoặc AO quá ngưỡng từ MQ2 thì phát lên cảnh báo!
@@ -82,10 +82,10 @@ Các chân GPIO này có thể tuỳ ý lựa chọn, nhưng cần lưu ý lại
 ### 1.5. Hoạt động của mạch
 
 #### Mạch lúc an toàn
-Chèn ảnh an toàn
+![pr1_2](https://github.com/LuongHvd/EmbeddedSystem-HUST20231-LuongThu/assets/104610812/10a1ff3f-36e7-4959-b1e4-ce290d70a8b6)
 
 #### Mạch lúc có lửa
-Chèn ảnh cùng lửa
+![prj1_3](https://github.com/LuongHvd/EmbeddedSystem-HUST20231-LuongThu/assets/104610812/4c9edcea-38a4-4c4b-a382-82e86bcd59c6)
 
 #### Mạch lúc phát hiện khí gas
 Chèn ảnh gas
@@ -110,18 +110,15 @@ Là module nhỏ gọn tích hợp cả 3 IC gồm DS1307, AT24C32, và DS18B20 
 Là sensor phục vụ đo nhiệt độ và độ ẩm.
 
 ### 1.2. Công cụ phần mềm Phần mềm
-Arduino IDE, với Board DOIT ESP32 DEV KIT.
-
-Thư viện Adafruit SSD1306 chứa code giúp giao tiếp với màn hình OLED SSD1306.
-
-Thư viện Adafruit RTCLib chứa code giúp giao tiếp với RTC.
-
-Thư viện DallasTemperature và OneWire.
-
-Thư viện DHT11.
+- Arduino IDE, với Board DOIT ESP32 DEV KIT.
+- Thư viện Adafruit SSD1306 chứa code giúp giao tiếp với màn hình OLED SSD1306.
+- Thư viện Adafruit RTCLib chứa code giúp giao tiếp với RTC.
+- Thư viện DallasTemperature và OneWire.
+- Thư viện DHT11.
 
 ### 1.3. Sơ đồ mạch
-Chèn ảnh vào nheeee
+![prj2](https://github.com/LuongHvd/EmbeddedSystem-HUST20231-LuongThu/assets/104610812/b6bd0546-fe63-4565-be8b-41a41d5be50d)
+
 1. GND các module nối với nhau.
 2. VCC của DHT11, SSD1306 và Tiny RTC nối với chân 3V3 của ESP32.
 3. SCL của SSD1306 và Tiny RTC nối với chân D22 của ESP32.
