@@ -152,6 +152,8 @@ Chèn ảnh gas
 ## Project 2: Hệ thống đo nhiệt độ - độ ẩm trong không khí
 ### 1.1. Công cụ Phần cứng:
 #### Kit ESP-WROOM 32
+ESP-WROOM-32 là một module IoT (Internet of Things) mạnh mẽ được sản xuất bởi Espressif Systems, được thiết kế dựa trên chip ESP32, giống với ở Project 1, là một đơn vị tích hợp Wi-Fi và Bluetooth, hỗ trợ các ứng dụng IoT đa dạng. Hỗ trợ Wi-Fi cho kết nối không dây, giúp module kết nối với mạng Internet, hỗ trợ Bluetooth cho giao tiếp không dây với các thiết bị khác. Chip ESP32 có hiệu năng cao với tốc độ xử lý nhanh, RAM đủ lớn, và các tính năng đa nhiệm. Có nhiều chân GPIO cho việc kết nối với cảm biến, actuators, và các linh kiện khác. Hỗ trợ nhiều chức năng ngoại vi như SPI, I2C, UART, GPIO, ADC, và nhiều tính năng khác.
+ESP-WROOM-32 thường được sử dụng trong các dự án IoT, thiết bị thông minh, và các ứng dụng nhúng khác, nhờ vào tính linh hoạt và khả năng tích hợp cao của nó.
 
 #### OLED SSD1306
 Là module màn hình đồ họa với độ phân giải 128x64. Module này rất nhỏ gọn và tiêu thụ năng lượng thấp, nhưng có chất lượng hiển thị rất tốt. Ngoài ra module còn có ưu
@@ -201,3 +203,8 @@ Chèn ảnh và video minh hoạ
 5. Đảm bảo rằng mọi kết nối phần cứng đều chính xác.
 
 ### 1.3. Sử dụng chương trình
+Hình ảnh
+
+Thay đổi ảnh hiển thị 
+Thay thế ảnh trong folder và nạp lại.
+
