@@ -8,9 +8,14 @@ void setup() {
   Serial.begin(115200);  /*baud rate for serial communication*/
   pinMode(LED_RED_Danger, OUTPUT);  /*LED_RED_Danger set as Output*/
   pinMode(LED_GREEN_Safe, OUTPUT);  /*LED_GREEN_Safe set as Output*/
-  analogRead(gas_sensor_input_pin);
-  delay(1000);
-  gasThreshold = 150 + analogRead(gas_sensor_input_pin);
+  int tmp = 0;
+  for (int i=1; i<=10; i++) {
+    tmp += analogRead(gas_sensor_input_pin);
+    delay(200);
+  }
+  gasThreshold = (int) 1.07 * tmp/10;
+  Serial.print("Gas threshold: ");
+  Serial.print(gasThreshold);
 }
 void loop() {
   int gas_sensor_Dout = analogRead(gas_sensor_input_pin);  /*Analog value read function*/
