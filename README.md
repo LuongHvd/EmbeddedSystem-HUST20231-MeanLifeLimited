@@ -17,39 +17,23 @@ Trong dự án này, nhóm sẽ thiết kế và xây dựng một hệ thống 
 #### Kit ESP32-C3_Mini:
 Dòng ESP32-C3 được xem là dòng low cost (giá rẻ) của ESPRESSIF tuy nhiên đây có thể được xem là dòng SoC phổ biến với những ưu điểm sau: Ngoại vi hỗ trợ mạnh: Bộ ADC, UART, I2C, SPI, … linh động, có thể mapping tới bất kì GPIO nào. Đồng thời số chân GPIO cũng nhiều hơn ESP8266 phù hợp với các ứng dụng cần nhiều GPIO.
 Hỗ trợ BLE 5.0 long range: Đây là một trong những điểm cộng, vì nó có thể dùng trong các ứng dụng kết nối BLE cần khoảng cách xa (thu thập dữ liệu sensor) với chi phí thấp.
-Hỗ trợ thuật mã hoá phần cứng (cho TLS/SSL): AES-128/AES-256 (FIPS PUB 197), ECB/CBC/OFB/CFB/CTR (NIST SP 800-38A), SHA1/SHA224/SHA256 (FIPS PUB 180-4), RSA3072, and ECC. Đây là một trong những thuật toán cơ bản cho kết nối MQTTS, HTTPS cũng như giao tiếp peer to peer.
-Bộ nhớ RAM phù hợp cho các ứng dụng IoT.
+Hỗ trợ thuật mã hoá phần cứng (cho TLS/SSL): AES-128/AES-256 (FIPS PUB 197), ECB/CBC/OFB/CFB/CTR (NIST SP 800-38A), SHA1/SHA224/SHA256 (FIPS PUB 180-4), RSA3072, and ECC. Đây là một trong những thuật toán cơ bản cho kết nối MQTTS, HTTPS cũng như giao tiếp peer to peer.Bộ nhớ RAM phù hợp cho các ứng dụng IoT.
 
-**Tính Năng:**
-
+Tính Năng:
 Wi­Fi:
 IEEE 802.11 b/g/n-compliant,
 Supports 20 MHz, 40 MHz bandwidth in 2.4GHz band,
-1T1R mode with data rate up to 150 Mbps,
-
-Wi-Fi Multimedia (WMM):
-TX/RX A-MPDU, TX/RX A-MSDU
-Immediate Block ACK
-Fragmentation and defragmentation
-Transmit opportunity (TXOP)
-Automatic Beacon monitoring (hardware TSF)
-4 × virtual Wi-Fi interfaces
-Simultaneous support for Infrastructure BSS in
-Station mode, SoftAP mode, Station + SoftAP mode, and promiscuous mode.
-
+1T1R mode with data rate up to 150 Mbps.
 Bluetooth:
 Speed: 125 Kbps, 500 Kbps, 1 Mbps, 2 Mbps
-
 CPU and Memory:
-32-bit RISC-V single-core processor, up to 160 MHz
-384 KB ROM
-400 KB SRAM (16 KB for cache)
-8 KB SRAM in RTC
-Embedded flash (up to 4MB)
-
+32-bit RISC-V single-core processor, up to 160 MHz,
+384 KB ROM,
+400 KB SRAM (16 KB for cache),
+8 KB SRAM in RTC,
+Embedded flash (up to 4MB).
 Advanced Peripheral Interfaces:
-22 × programmable GPIOs
-
+22 × programmable GPIOs.
 Digital interfaces:
 3 × SPI,
 2 × UART,
