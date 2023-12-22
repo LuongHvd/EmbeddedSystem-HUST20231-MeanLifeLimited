@@ -11,11 +11,10 @@ Ngô Trần Anh Thư - 20200623
 - Project 3: Hiển thị hình ảnh PNG lên màn hình bộ kit STM32.
 
 Mục tiêu của nhóm không chỉ là hoàn thành các yêu cầu của môn học mà còn là tạo ra những sản phẩm có giá trị thực tiễn, có thể áp dụng trong đời sống và có khả năng mở rộng trong tương lai.
-## Các công nghệ sử dụng
 
 ## Project 1: Hệ thống cảm biến khí ga và ngọn lửa báo cháy trong nhà bếp
 Trong dự án này, nhóm sẽ thiết kế và xây dựng một hệ thống cảm biến thông minh nhằm phát hiện khí ga và ngọn lửa trong nhà bếp. Hệ thống sẽ tích hợp các cảm biến đặc biệt (bao gồm sensor phát hiện khí gas và sensor phát hiện lửa) để nhận biết sớm các nguy cơ cháy nổ, từ đó kích hoạt hệ thống cảnh báo và tiến hành các biện pháp an toàn cần thiết.
-### Công cụ phần cứng:
+### 1.1. Công cụ phần cứng:
 #### Kit ESP32-C3_Mini:
 
 Dòng ESP32-C3 được xem là dòng low cost (giá rẻ) của ESPRESSIF tuy nhiên đây có thể được xem là dòng SoC phổ biến với những ưu điểm sau: Ngoại vi hỗ trợ mạnh: Bộ ADC, UART, I2C, SPI, … linh động, có thể mapping tới bất kì GPIO nào. Đồng thời số chân GPIO cũng nhiều hơn ESP8266 phù hợp với các ứng dụng cần nhiều GPIO.
@@ -107,43 +106,80 @@ Sử dụng trong nhiều ứng dụng an toàn như hệ thống chữa cháy t
 #### Còi chip 1.5-15V
 Còi này để phát lên cảnh báo khi có nguy hiểm về lửa hoặc khí gas.
 
-#### Đèn Led 3 màu Red Green Blue 
+#### Đèn LED 3 màu Red Green Blue 
 Đèn này dùng để cảnh báo: sẽ sáng đèn green nếu an toàn, đèn red nếu nguy hiểm.
 
-### Công cụ Phần mềm
+### 1.2. Công cụ Phần mềm
 Arduino IDE, với Board ESP32-C3 Dev dùng để nạp code.
 
-### Sơ đồ mạch
+### 1.3. Sơ đồ mạch
+Chèn ảnh mạch ko có gì hihi
 
-### Hoạt động của mạch
+Lắp mạch:
+1. Các chân GND của ESP32-C3, còi chip, đèn LED, cảm biến gas MQ2 và cảm biến flame sensor nối chung với nhau.
+
+2. Chân VCC của 2 sensor và còi chip nối vào nguồn 3.3V của ESP32-C3.
+
+3. Chân AO (analog-out) của MQ2 nối với GPIO1 của ESP32
+
+4. Chân DO (digital-out) của flame sensor nối với GPIO2 của ESP32.
+
+5. Chân RED của đèn và chân còn lại của còi nối với GPIO3 của ESP32.
+
+6. Chân GREEN của đèn nối với GPIO0 của ESP32.
+
+Các chân GPIO này có thể tuỳ ý lựa chọn, nhưng cần lưu ý lại để phục vụ lập trình.
+
+### 1.4. Thuật toán phát hiện nguy hiểm
+
+1. Set up: khởi tạo các chân vào ra của mạch.
+2. Đo ngưỡng ga: đo 10 lần tín hiệu analog từ MQ2 để xác định.
+3. Loop: Nếu nhận được tín hiệu 0 từ DO của flame sensor hoặc AO quá ngưỡng từ MQ2 thì phát lên cảnh báo!
+
+### 1.5. Hoạt động của mạch
+
+#### Mạch lúc an toàn
+Chèn ảnh an toàn
+
+#### Mạch lúc có lửa
+Chèn ảnh cùng lửa
+
+#### Mạch lúc phát hiện khí gas
+Chèn ảnh gas
+
+#### Video hoạt động của mạch
 
 
 ## Project 2: Hệ thống đo nhiệt độ - độ ẩm trong không khí
-### Công cụ phần cứng và phần mềm
-#### Phần cứng:
-Kit ESP32-C3_Mini
+### 1.1. Công cụ Phần cứng:
+#### Kit ESP-WROOM 32
+
+#### OLED SSD1306
 
 
-#### Phần mềm
-Arduino IDE, với Board ESP32-C3 Dev 
 
-### Sơ đồ mạch
 
-### Hoạt động của mạch
+### 1.2. Công cụ phần mềm Phần mềm
+Arduino IDE, với Board DOIT ESP32 DEV KIT
+Thư viện 
+
+### 1.3. Sơ đồ mạch
+
+### 1.4. Hoạt động của mạch
 
 
 
 ## Project 3: Hiển thị hình ảnh PNG lên màn hình bộ kit STM32
-### Công cụ sử dụng: 
+### 1.1. Công cụ sử dụng: 
 * TouchGFX Design version 4.23.0, available at: https://www.st.com/en/development-tools/touchgfxdesigner.html.
 * STM32CubeIDE version 1.14.0.
 * Bộ kit STM32F429I-DISC1.
 
-### Cài đặt:
+### 1.2. Cài đặt:
 1. Clone repo này với lệnh: git clone https://github.com/yourusername/IT4210-Project3.git.
 2. Cấu hình
 3. Mở project bằng phần mềm IDE của bạn và cấu hình các driver cần thiết.
 4. Nạp mã nguồn vào bộ kit STM32 của bạn.
 5. Đảm bảo rằng mọi kết nối phần cứng đều chính xác.
 
-### Sử dụng chương trình
+### 1.3. Sử dụng chương trình
