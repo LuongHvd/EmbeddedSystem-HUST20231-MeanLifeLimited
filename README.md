@@ -62,7 +62,8 @@ Còi này để phát lên cảnh báo khi có nguy hiểm về lửa hoặc kh�
 Arduino IDE, với Board ESP32-C3 Dev dùng để nạp code.
 
 ### 1.3. Sơ đồ mạch
-![prj1_1](https://github.com/LuongHvd/EmbeddedSystem-HUST20231-LuongThu/assets/104610812/b4a84fb1-01e7-449c-aa67-c540343d4ff1)
+![prj1_1](https://github.com/LuongHvd/EmbeddedSystem-HUST20231-LuongThu/assets/104610812/56c8412f-4f94-48f0-ae31-7585c9512e24)
+
 
 **Lắp mạch:**
 1. Các chân GND của ESP32-C3, còi chip, đèn LED, cảm biến gas MQ2 và cảm biến flame sensor nối chung với nhau.
