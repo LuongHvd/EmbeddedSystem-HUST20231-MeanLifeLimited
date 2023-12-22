@@ -95,7 +95,7 @@ Chèn ảnh gas
 
 
 ## Project 2: Hệ thống đo nhiệt độ - độ ẩm trong không khí
-### 1.1. Công cụ Phần cứng:
+### 2.2. Công cụ Phần cứng:
 #### Kit ESP-WROOM 32
 ESP-WROOM-32 là một module IoT (Internet of Things) mạnh mẽ được sản xuất bởi Espressif Systems, được thiết kế dựa trên chip ESP32, giống với ở Project 1, là một đơn vị tích hợp Wi-Fi và Bluetooth, hỗ trợ các ứng dụng IoT đa dạng. Hỗ trợ Wi-Fi cho kết nối không dây, giúp module kết nối với mạng Internet, hỗ trợ Bluetooth cho giao tiếp không dây với các thiết bị khác. Chip ESP32 có hiệu năng cao với tốc độ xử lý nhanh, RAM đủ lớn, và các tính năng đa nhiệm. Có nhiều chân GPIO cho việc kết nối với cảm biến, actuators, và các linh kiện khác. Hỗ trợ nhiều chức năng ngoại vi như SPI, I2C, UART, GPIO, ADC, và nhiều tính năng khác.
 ESP-WROOM-32 thường được sử dụng trong các dự án IoT, thiết bị thông minh, và các ứng dụng nhúng khác, nhờ vào tính linh hoạt và khả năng tích hợp cao của nó.
@@ -110,14 +110,14 @@ Là module nhỏ gọn tích hợp cả 3 IC gồm DS1307, AT24C32, và DS18B20 
 #### Sensor DHT11
 Là sensor phục vụ đo nhiệt độ và độ ẩm.
 
-### 1.2. Công cụ phần mềm Phần mềm
+### 2.2. Công cụ phần mềm Phần mềm
 - Arduino IDE, với Board DOIT ESP32 DEV KIT.
 - Thư viện Adafruit SSD1306 chứa code giúp giao tiếp với màn hình OLED SSD1306.
 - Thư viện Adafruit RTCLib chứa code giúp giao tiếp với RTC.
 - Thư viện DallasTemperature và OneWire.
 - Thư viện DHT11.
 
-### 1.3. Sơ đồ mạch
+### 2.3. Sơ đồ mạch
 ![prj2](https://github.com/LuongHvd/EmbeddedSystem-HUST20231-LuongThu/assets/104610812/b6bd0546-fe63-4565-be8b-41a41d5be50d)
 
 1. GND các module nối với nhau.
@@ -127,26 +127,33 @@ Là sensor phục vụ đo nhiệt độ và độ ẩm.
 5. DS của Tiny RTC nối với chân D4 (số = 4) của ESP32.
 6. Data của DHT11 nối với GPIO 16 (RX2) của ESP32.
 
-### 1.4. Hoạt động của mạch
+### 2.4. Hoạt động của mạch
 Chèn ảnh và video minh hoạ
 
 
 ## Project 3: Hiển thị hình ảnh PNG lên màn hình bộ kit STM32
-### 1.1. Công cụ sử dụng: 
-* TouchGFX Design version 4.23.0, available at: https://www.st.com/en/development-tools/touchgfxdesigner.html.
-* STM32CubeIDE version 1.14.0.
-* Bộ kit STM32F429I-DISC1.
+### 3.1. Công cụ sử dụng: 
+#### Phần cứng
+**Bộ kit STM32F429I-DISC1**: Một bộ phát triển dựa trên vi điều khiển ARM Cortex-M4 STM32F429ZIT6 của STMicroelectronics. Bộ kit này cung cấp một môi trường phát triển mạnh mẽ để phát triển ứng dụng nhúng đa dạng. Với màn hình cảm ứng màu TFT LCD 2.4 inch, nó giúp bạn hiển thị giao diện người dùng đẹp mắt.
+Bên cạnh đó, bộ kit còn tích hợp nhiều tính năng như cổng USB, giao tiếp Ethernet, cổng audio, và cảm biến gia tốc và con quay số. Điều này tạo điều kiện thuận lợi cho việc phát triển ứng dụng IoT, điều khiển nhúng, và các dự án liên quan.
+Bộ kit STM32F429I-DISC1 đi kèm với phần mềm hỗ trợ chất lượng, bao gồm STM32CubeMX và STM32CubeIDE, giúp đơn giản hóa quá trình phát triển và debug ứng dụng của bạn trên nền tảng STM32. Đây là công cụ lý tưởng cho những người muốn nắm bắt sâu về vi điều khiển ARM Cortex-M và thực hiện các dự án nhúng phức tạp.
+#### Phần mềm
+**TouchGFX Design** version 4.23.0, available at: https://www.st.com/en/development-tools/touchgfxdesigner.html. Một công cụ thiết kế giao diện người dùng (UI) mạnh mẽ được phát triển bởi STMicroelectronics. Được tích hợp chặt chẽ với TouchGFX, một framework phần mềm đồ họa cho các ứng dụng nhúng, TouchGFX Design giúp người phát triển tạo và tối ưu hóa giao diện người dùng của họ một cách dễ dàng và linh hoạt.
+Công cụ này cung cấp một giao diện đồ họa người dùng thân thiện, cho phép bạn kéo và thả các thành phần, xem trước hiệu ứng và tùy chỉnh giao diện mà không cần kiến thức chuyên sâu về lập trình đồ họa. TouchGFX Design hỗ trợ nhanh chóng việc tạo ra giao diện người dùng đẹp mắt và chất lượng cao cho các ứng dụng nhúng, đặc biệt là trên các màn hình cảm ứng.
+Với khả năng tích hợp dễ dàng và sự tương thích với nhiều dự án, TouchGFX Design giúp giảm thời gian phát triển và đồng thời đảm bảo hiệu suất và trải nghiệm người dùng tốt nhất cho sản phẩm của bạn.
 
-### 1.2. Cài đặt:
+**STM32CubeIDE** version 1.14.0, available at: https://www.st.com/en/development-tools/stm32cubeide.html. Một môi trường phát triển tích hợp (IDE) được phát triển bởi STMicroelectronics để hỗ trợ việc phát triển ứng dụng trên các vi điều khiển STM32, dựa trên lõi ARM Cortex-M. Đây là một công cụ mạnh mẽ và linh hoạt được thiết kế để giúp người phát triển dễ dàng tạo, debug và triển khai ứng dụng nhúng trên nền tảng STM32.
+
+### 3.2. Cài đặt:
 1. Clone repo này với lệnh: git clone https://github.com/yourusername/IT4210-Project3.git.
 2. Cấu hình
 3. Mở project bằng phần mềm IDE của bạn và cấu hình các driver cần thiết.
 4. Nạp mã nguồn vào bộ kit STM32 của bạn.
 5. Đảm bảo rằng mọi kết nối phần cứng đều chính xác.
 
-### 1.3. Sử dụng chương trình
-Hình ảnh
+### 3.3. Sử dụng chương trình
+Bấm vào màn hình để đến ảnh tiếp theo.
 
-Thay đổi ảnh hiển thị 
-Thay thế ảnh trong folder và nạp lại.
+Thay đổi ảnh hiển thị:
+Thay thế ảnh trong folder TouchGFX/asset và nạp lại code.
 
