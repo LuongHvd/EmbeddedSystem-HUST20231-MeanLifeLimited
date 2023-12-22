@@ -15,7 +15,7 @@ void setup() {
   }
   gasThreshold = (int) 1.07 * tmp/10;
   Serial.print("Gas threshold: ");
-  Serial.print(gasThreshold);
+  Serial.println(gasThreshold);
 }
 void loop() {
   int gas_sensor_Dout = analogRead(gas_sensor_input_pin);  /*Analog value read function*/
