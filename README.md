@@ -15,13 +15,12 @@ Ngô Trần Anh Thư - 20200623
 Trong dự án này, nhóm sẽ thiết kế và xây dựng một hệ thống cảm biến thông minh nhằm phát hiện khí ga và ngọn lửa trong nhà bếp. Hệ thống sẽ tích hợp các cảm biến đặc biệt (bao gồm sensor phát hiện khí gas và sensor phát hiện lửa) để nhận biết sớm các nguy cơ cháy nổ, từ đó kích hoạt hệ thống cảnh báo và tiến hành các biện pháp an toàn cần thiết.
 ### 1.1. Công cụ phần cứng:
 #### Kit ESP32-C3_Mini:
-
 Dòng ESP32-C3 được xem là dòng low cost (giá rẻ) của ESPRESSIF tuy nhiên đây có thể được xem là dòng SoC phổ biến với những ưu điểm sau: Ngoại vi hỗ trợ mạnh: Bộ ADC, UART, I2C, SPI, … linh động, có thể mapping tới bất kì GPIO nào. Đồng thời số chân GPIO cũng nhiều hơn ESP8266 phù hợp với các ứng dụng cần nhiều GPIO.
 Hỗ trợ BLE 5.0 long range: Đây là một trong những điểm cộng, vì nó có thể dùng trong các ứng dụng kết nối BLE cần khoảng cách xa (thu thập dữ liệu sensor) với chi phí thấp.
 Hỗ trợ thuật mã hoá phần cứng (cho TLS/SSL): AES-128/AES-256 (FIPS PUB 197), ECB/CBC/OFB/CFB/CTR (NIST SP 800-38A), SHA1/SHA224/SHA256 (FIPS PUB 180-4), RSA3072, and ECC. Đây là một trong những thuật toán cơ bản cho kết nối MQTTS, HTTPS cũng như giao tiếp peer to peer.
 Bộ nhớ RAM phù hợp cho các ứng dụng IoT.
 
-Tính Năng:
+**Tính Năng:**
 
 Wi­Fi:
 IEEE 802.11 b/g/n-compliant,
@@ -57,7 +56,7 @@ Digital interfaces:
 1 × I2C,
 1 × I2S
 
-2. Ứng dụng 
+### 1.2. Ứng dụng 
 
 Smart Home
 Light control
@@ -116,15 +115,10 @@ Chèn ảnh mạch ko có gì hihi
 
 Lắp mạch:
 1. Các chân GND của ESP32-C3, còi chip, đèn LED, cảm biến gas MQ2 và cảm biến flame sensor nối chung với nhau.
-
 2. Chân VCC của 2 sensor và còi chip nối vào nguồn 3.3V của ESP32-C3.
-
 3. Chân AO (analog-out) của MQ2 nối với GPIO1 của ESP32
-
 4. Chân DO (digital-out) của flame sensor nối với GPIO2 của ESP32.
-
 5. Chân RED của đèn và chân còn lại của còi nối với GPIO3 của ESP32.
-
 6. Chân GREEN của đèn nối với GPIO0 của ESP32.
 
 Các chân GPIO này có thể tuỳ ý lựa chọn, nhưng cần lưu ý lại để phục vụ lập trình.
