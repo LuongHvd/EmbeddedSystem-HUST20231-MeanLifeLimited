@@ -40,40 +40,6 @@ Digital interfaces:
 1 × I2C,
 1 × I2S
 
-### 1.2. Ứng dụng 
-
-Smart Home
-Light control
-Smart button
-Smart plug
-Indoor positioning
-Industrial Automation
-Industrial robot
-Mesh network
-Human machine interface (HMI)
-Industrial field bus
-Health Care
-Health monitor
-Baby monitor
-Consumer Electronics
-Smart watch and bracelet
-Over-the-top (OTT) devices
-Wi-Fi and Bluetooth speaker
-Logger toys and proximity sensing toys
-Smart Agriculture
-Smart greenhouse
-Smart irrigation
-Agriculture robot
-Retail and Catering
-POS machines
-Service robot
-Audio Device
-Internet music players
-Live streaming devices
-Internet radio players
-Generic Low-power IoT Sensor Hubs
-Generic Low-power IoT Data Loggers
-
 #### Sensor phát hiện khí ga MQ2
 Cảm biến MQ-2 là một cảm biến khí dựa trên nguyên lý hoạt động của dòng điện đi qua một lớp chất bán dẫn khi tiếp xúc với khí. Được thiết kế đặc biệt để phát hiện các loại khí như khí CO (carbon monoxide), khí gas tự nhiên, và khí LPG (propane, butane). MQ-2 có khả năng phát hiện mức độ nồng độ khí trong môi trường và sản xuất tín hiệu analog dựa trên sự biến đổi điện trở.
 
