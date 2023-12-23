@@ -18,28 +18,15 @@ Trong dự án này, nhóm sẽ thiết kế và xây dựng một hệ thống 
 Dòng ESP32-C3 được xem là dòng low cost (giá rẻ) của ESPRESSIF tuy nhiên đây có thể được xem là dòng SoC phổ biến với những ưu điểm sau: 
 - Ngoại vi hỗ trợ mạnh: Bộ ADC, UART, I2C, SPI, … linh động, có thể mapping tới bất kì GPIO nào. Đồng thời số chân GPIO cũng nhiều hơn ESP8266 phù hợp với các ứng dụng cần nhiều GPIO.
 - Hỗ trợ BLE 5.0 long range: Đây là một trong những điểm cộng, vì nó có thể dùng trong các ứng dụng kết nối BLE cần khoảng cách xa (thu thập dữ liệu sensor) với chi phí thấp.
-- Hỗ trợ thuật mã hoá phần cứng (cho TLS/SSL): AES-128/AES-256 (FIPS PUB 197), ECB/CBC/OFB/CFB/CTR (NIST SP 800-38A), SHA1/SHA224/SHA256 (FIPS PUB 180-4), RSA3072, and ECC. Đây là một trong những thuật toán cơ bản cho kết nối MQTTS, HTTPS cũng như giao tiếp peer to peer.Bộ nhớ RAM phù hợp cho các ứng dụng IoT.
+- Hỗ trợ thuật mã hoá phần cứng (cho TLS/SSL): AES-128/AES-256 (FIPS PUB 197), ECB/CBC/OFB/CFB/CTR (NIST SP 800-38A), SHA1/SHA224/SHA256 (FIPS PUB 180-4), RSA3072, and ECC. Đây là một trong những thuật toán cơ bản cho kết nối MQTTS, HTTPS cũng như giao tiếp peer to peer.
+- Bộ nhớ RAM phù hợp cho các ứng dụng IoT.
 
-Tính Năng:
-Wi­Fi:
-IEEE 802.11 b/g/n-compliant,
-Supports 20 MHz, 40 MHz bandwidth in 2.4GHz band,
-1T1R mode with data rate up to 150 Mbps.
-Bluetooth:
-Speed: 125 Kbps, 500 Kbps, 1 Mbps, 2 Mbps
-CPU and Memory:
-32-bit RISC-V single-core processor, up to 160 MHz,
-384 KB ROM,
-400 KB SRAM (16 KB for cache),
-8 KB SRAM in RTC,
-Embedded flash (up to 4MB).
-Advanced Peripheral Interfaces:
-22 × programmable GPIOs.
-Digital interfaces:
-3 × SPI,
-2 × UART,
-1 × I2C,
-1 × I2S
+**Tính năng:** 
+- Wi­Fi: IEEE 802.11 b/g/n-compliant, Supports 20 MHz, 40 MHz bandwidth in 2.4GHz band, 1T1R mode with data rate up to 150 Mbps.
+- Bluetooth: Speed: 125 Kbps, 500 Kbps, 1 Mbps, 2 Mbps.
+- CPU and Memory: 32-bit RISC-V single-core processor, up to 160 MHz, 384 KB ROM, 400 KB SRAM (16 KB for cache), 8 KB SRAM in RTC, Embedded flash (up to 4MB).
+- Advanced Peripheral Interfaces: 22 × programmable GPIOs.
+- Digital interfaces: 3 × SPI, 2 × UART, 1 × I2C, 1 × I2S.
 
 #### Sensor phát hiện khí ga MQ2
 Cảm biến MQ-2 là một cảm biến khí dựa trên nguyên lý hoạt động của dòng điện đi qua một lớp chất bán dẫn khi tiếp xúc với khí. Được thiết kế đặc biệt để phát hiện các loại khí như khí CO (carbon monoxide), khí gas tự nhiên, và khí LPG (propane, butane). MQ-2 có khả năng phát hiện mức độ nồng độ khí trong môi trường và sản xuất tín hiệu analog dựa trên sự biến đổi điện trở.
@@ -98,6 +85,7 @@ Chèn ảnh gas
 ### 2.2. Công cụ Phần cứng:
 #### Kit ESP-WROOM 32
 ESP-WROOM-32 là một module IoT (Internet of Things) mạnh mẽ được sản xuất bởi Espressif Systems, được thiết kế dựa trên chip ESP32, giống với ở Project 1, là một đơn vị tích hợp Wi-Fi và Bluetooth, hỗ trợ các ứng dụng IoT đa dạng. Hỗ trợ Wi-Fi cho kết nối không dây, giúp module kết nối với mạng Internet, hỗ trợ Bluetooth cho giao tiếp không dây với các thiết bị khác. Chip ESP32 có hiệu năng cao với tốc độ xử lý nhanh, RAM đủ lớn, và các tính năng đa nhiệm. Có nhiều chân GPIO cho việc kết nối với cảm biến, actuators, và các linh kiện khác. Hỗ trợ nhiều chức năng ngoại vi như SPI, I2C, UART, GPIO, ADC, và nhiều tính năng khác.
+
 ESP-WROOM-32 thường được sử dụng trong các dự án IoT, thiết bị thông minh, và các ứng dụng nhúng khác, nhờ vào tính linh hoạt và khả năng tích hợp cao của nó.
 
 #### OLED SSD1306
@@ -138,11 +126,15 @@ Chèn ảnh và video minh hoạ
 Bên cạnh đó, bộ kit còn tích hợp nhiều tính năng như cổng USB, giao tiếp Ethernet, cổng audio, và cảm biến gia tốc và con quay số. Điều này tạo điều kiện thuận lợi cho việc phát triển ứng dụng IoT, điều khiển nhúng, và các dự án liên quan.
 Bộ kit STM32F429I-DISC1 đi kèm với phần mềm hỗ trợ chất lượng, bao gồm STM32CubeMX và STM32CubeIDE, giúp đơn giản hóa quá trình phát triển và debug ứng dụng của bạn trên nền tảng STM32. Đây là công cụ lý tưởng cho những người muốn nắm bắt sâu về vi điều khiển ARM Cortex-M và thực hiện các dự án nhúng phức tạp.
 #### Phần mềm
-**TouchGFX Design** version 4.23.0, available at: https://www.st.com/en/development-tools/touchgfxdesigner.html. Một công cụ thiết kế giao diện người dùng (UI) mạnh mẽ được phát triển bởi STMicroelectronics. Được tích hợp chặt chẽ với TouchGFX, một framework phần mềm đồ họa cho các ứng dụng nhúng, TouchGFX Design giúp người phát triển tạo và tối ưu hóa giao diện người dùng của họ một cách dễ dàng và linh hoạt.
+**TouchGFX Design** version 4.23.0, available at: https://www.st.com/en/development-tools/touchgfxdesigner.html. 
+
+Một công cụ thiết kế giao diện người dùng (UI) mạnh mẽ được phát triển bởi STMicroelectronics. Được tích hợp chặt chẽ với TouchGFX, một framework phần mềm đồ họa cho các ứng dụng nhúng, TouchGFX Design giúp người phát triển tạo và tối ưu hóa giao diện người dùng của họ một cách dễ dàng và linh hoạt.
 Công cụ này cung cấp một giao diện đồ họa người dùng thân thiện, cho phép bạn kéo và thả các thành phần, xem trước hiệu ứng và tùy chỉnh giao diện mà không cần kiến thức chuyên sâu về lập trình đồ họa. TouchGFX Design hỗ trợ nhanh chóng việc tạo ra giao diện người dùng đẹp mắt và chất lượng cao cho các ứng dụng nhúng, đặc biệt là trên các màn hình cảm ứng.
 Với khả năng tích hợp dễ dàng và sự tương thích với nhiều dự án, TouchGFX Design giúp giảm thời gian phát triển và đồng thời đảm bảo hiệu suất và trải nghiệm người dùng tốt nhất cho sản phẩm của bạn.
 
-**STM32CubeIDE** version 1.14.0, available at: https://www.st.com/en/development-tools/stm32cubeide.html. Một môi trường phát triển tích hợp (IDE) được phát triển bởi STMicroelectronics để hỗ trợ việc phát triển ứng dụng trên các vi điều khiển STM32, dựa trên lõi ARM Cortex-M. Đây là một công cụ mạnh mẽ và linh hoạt được thiết kế để giúp người phát triển dễ dàng tạo, debug và triển khai ứng dụng nhúng trên nền tảng STM32.
+**STM32CubeIDE** version 1.14.0, available at: https://www.st.com/en/development-tools/stm32cubeide.html. 
+
+Một môi trường phát triển tích hợp (IDE) được phát triển bởi STMicroelectronics để hỗ trợ việc phát triển ứng dụng trên các vi điều khiển STM32, dựa trên lõi ARM Cortex-M. Đây là một công cụ mạnh mẽ và linh hoạt được thiết kế để giúp người phát triển dễ dàng tạo, debug và triển khai ứng dụng nhúng trên nền tảng STM32.
 
 ### 3.2. Cài đặt:
 1. Clone repo này với lệnh: git clone https://github.com/yourusername/IT4210-Project3.git.
