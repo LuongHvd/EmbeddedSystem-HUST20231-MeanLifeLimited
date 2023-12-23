@@ -78,8 +78,6 @@ Arduino IDE, với Board ESP32-C3 Dev dùng để nạp code.
 #### Mạch lúc phát hiện khí gas
 Chèn ảnh gas
 
-#### Video hoạt động của mạch
-
 
 ## Project 2: Hệ thống đo nhiệt độ - độ ẩm trong không khí
 ### 2.2. Công cụ Phần cứng:
@@ -105,7 +103,7 @@ Là sensor phục vụ đo nhiệt độ và độ ẩm.
 - Thư viện DallasTemperature và OneWire.
 - Thư viện DHT11.
 
-### 2.3. Sơ đồ mạch
+### 2.3. Sơ đồ mạch và hoạt động của mạch
 ![prj2](https://github.com/LuongHvd/EmbeddedSystem-HUST20231-LuongThu/assets/104610812/b6bd0546-fe63-4565-be8b-41a41d5be50d)
 
 1. GND các module nối với nhau.
@@ -114,10 +112,6 @@ Là sensor phục vụ đo nhiệt độ và độ ẩm.
 4. SDA của SSD1306 và Tiny RTC nối với chân D21 của ESP32.
 5. DS của Tiny RTC nối với chân D4 (số = 4) của ESP32.
 6. Data của DHT11 nối với GPIO 16 (RX2) của ESP32.
-
-### 2.4. Hoạt động của mạch
-Chèn ảnh và video minh hoạ
-
 
 ## Project 3: Hiển thị hình ảnh PNG lên màn hình bộ kit STM32
 ### 3.1. Công cụ sử dụng: 
@@ -143,9 +137,6 @@ Một môi trường phát triển tích hợp (IDE) được phát triển bở
 4. Nạp mã nguồn vào bộ kit STM32 của bạn.
 5. Đảm bảo rằng mọi kết nối phần cứng đều chính xác.
 
-### 3.3. Sử dụng chương trình
-Bấm vào màn hình để đến ảnh tiếp theo.
+### 3.3. Hoạt động
 
-Thay đổi ảnh hiển thị:
-Thay thế ảnh trong folder TouchGFX/asset và nạp lại code.
-
+_Thay đổi ảnh hiển thị: Thay thế ảnh trong folder TouchGFX/asset và nạp lại code._
