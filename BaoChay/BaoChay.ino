@@ -10,10 +10,18 @@ void setup() {
   pinMode(LED_GREEN_Safe, OUTPUT);  /*LED_GREEN_Safe set as Output*/
   int tmp = 0;
   for (int i=1; i<=10; i++) {
-    tmp += analogRead(gas_sensor_input_pin);
+    tmp = analogRead(gas_sensor_input_pin);
     delay(200);
   }
-  gasThreshold = (int) 1.07 * tmp/10;
+  for (int i=1; i<=9; i++) {
+    int tmp2 = analogRead(gas_sensor_input_pin);
+    tmp +=tmp2;
+    Serial.print(tmp2);
+    Serial.print("\t");
+    Serial.println(tmp);
+    delay(200);
+  }
+  gasThreshold = (int) (tmp*0.103);
   Serial.print("Gas threshold: ");
   Serial.println(gasThreshold);
 }
@@ -22,6 +30,8 @@ void loop() {
   int flame_sensor_Dout = digitalRead(flame_sensor_input_pin);
   Serial.print("Gas Sensor: ");  
   Serial.print(gas_sensor_Dout);   /*Read value printed*/
+  Serial.print("/");
+  Serial.print(gasThreshold);
   Serial.print("\t");
   Serial.print("\t");
   Serial.print("Flame Sensor: ");
