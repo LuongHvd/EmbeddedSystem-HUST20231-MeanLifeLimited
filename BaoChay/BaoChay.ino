@@ -26,12 +26,12 @@ void setup() {
     Serial.println(gasThreshold);
 }
 void loop() {
-    int tmp = 0;
-    for (int i=0; i=5; i++) {
-        tmp += analogRead(gas_sensor_input_pin);
-        delay(200);
-    }
-    int gas_sensor_Aout =  tmp/5; /*Analog value read function*/
+    // int tmp = 0;
+    // for (int i=0; i=4; i++) {
+    //     tmp += analogRead(gas_sensor_input_pin);
+    // }
+    // int gas_sensor_Aout =  (int) (tmp/5); /*Analog value read function*/
+     int gas_sensor_Aout =  analogRead(gas_sensor_input_pin);
     int flame_sensor_Dout = digitalRead(flame_sensor_input_pin);
     Serial.print("Gas Sensor: ");  
     Serial.print(gas_sensor_Aout);   /*Read value printed*/
@@ -55,7 +55,6 @@ void loop() {
         Serial.println("An toàn");
         digitalWrite (LED_RED_Danger, LOW) ;  /*LED_RED_Danger set LOW if NO Gas detected */
         digitalWrite (LED_GREEN_Safe, HIGH) ;
-
     }
     delay(300);                /* DELAY of 300 mili sec*/
 }
