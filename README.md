@@ -137,6 +137,4 @@ Một môi trường phát triển tích hợp (IDE) được phát triển bở
 4. Nạp mã nguồn vào bộ kit STM32 của bạn.
 5. Đảm bảo rằng mọi kết nối phần cứng đều chính xác.
 
-### 3.3. Hoạt động
 
-_Thay đổi ảnh hiển thị: Thay thế ảnh trong folder TouchGFX/asset và nạp lại code._
