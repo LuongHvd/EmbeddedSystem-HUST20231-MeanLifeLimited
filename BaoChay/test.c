@@ -57,5 +57,5 @@ void loop() {
         digitalWrite (LED_GREEN_Safe, HIGH) ;
 
     }
-    delay(300);                /* DELAY of 300 mili sec*/
+    delay(300);                /*DELAY of 300 mili sec*/
 }
