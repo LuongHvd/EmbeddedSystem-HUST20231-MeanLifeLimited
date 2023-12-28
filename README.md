@@ -76,7 +76,7 @@ Arduino IDE, với Board ESP32-C3 Dev dùng để nạp code.
 ![prj1_3](https://github.com/LuongHvd/EmbeddedSystem-HUST20231-LuongThu/assets/104610812/4c9edcea-38a4-4c4b-a382-82e86bcd59c6)
 
 #### Mạch lúc phát hiện khí gas
-Chèn ảnh gas
+![20231222_115444](https://github.com/LuongHvd/EmbeddedSystem-HUST20231-MeanLifeLimited/assets/104610812/b21548b3-80a9-4378-b336-19be14da2c8b)
 
 
 ## Project 2: Hệ thống đo nhiệt độ - độ ẩm trong không khí
