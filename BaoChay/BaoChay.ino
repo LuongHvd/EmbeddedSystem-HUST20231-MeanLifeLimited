@@ -1,8 +1,8 @@
-int LED_RED_Danger = 3;            /*LED_RED_Danger pin defined*/
-int LED_GREEN_Safe = 0;
+int LED_RED_Danger = 21;      //3      /*LED_RED_Danger pin defined*/
+int LED_GREEN_Safe = 17; // 0
 
-int gas_sensor_input_pin = 1;    /*Digital pin 4 for sensor input*/
-int flame_sensor_input_pin = 2;
+int gas_sensor_input_pin = 4; //1  
+int flame_sensor_input_pin = 3; //2
 int gasThreshold = 0;
 void setup() {
     Serial.begin(115200);  /*baud rate for serial communication*/
@@ -11,7 +11,8 @@ void setup() {
     int tmp = 0;
     for (int i=1; i<=10; i++) {
         tmp = analogRead(gas_sensor_input_pin);
-        delay(200);
+        Serial.println(tmp);
+        delay(2000);
     }
     for (int i=1; i<=9; i++) {
         int tmp2 = analogRead(gas_sensor_input_pin);
@@ -19,7 +20,7 @@ void setup() {
         Serial.print(tmp2);
         Serial.print("\t");
         Serial.println(tmp);
-        delay(200);
+        delay(500);
     }
     gasThreshold = (int) (tmp*0.104);
     Serial.print("Gas threshold: ");
@@ -31,12 +32,14 @@ void loop() {
     //     tmp += analogRead(gas_sensor_input_pin);
     // }
     // int gas_sensor_Aout =  (int) (tmp/5); /*Analog value read function*/
-     int gas_sensor_Aout =  analogRead(gas_sensor_input_pin);
+    int gas_sensor_Aout =  analogRead(gas_sensor_input_pin);
     int flame_sensor_Dout = digitalRead(flame_sensor_input_pin);
     Serial.print("Gas Sensor: ");  
     Serial.print(gas_sensor_Aout);   /*Read value printed*/
     Serial.print("/");
     Serial.print(gasThreshold);
+    Serial.print("=");
+    Serial.print(gas_sensor_Aout/(gasThreshold+0.0));
     Serial.print("\t");
     Serial.print("\t");
     Serial.print("Flame Sensor: ");
